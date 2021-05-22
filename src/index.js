@@ -1,13 +1,20 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ProfileCard from './containers/ProfileCard';
 import reportWebVitals from './reportWebVitals';
+import mockData from './mockData';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <div style={{overFlow: 'auto'}}>
+    {mockData.map(data => 
+      <ProfileCard 
+        src={data.src}
+        title={data.title} 
+        text={data.text} 
+        />
+    )}
+  </div>,
   document.getElementById('root')
 );
 
